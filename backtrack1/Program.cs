@@ -1,4 +1,4 @@
-﻿//#define _DEBUG
+﻿#define _DEBUG
 
 using System;
 using System.IO;
@@ -67,10 +67,23 @@ namespace backtrack1
             for (int i = 0; i < 1000000; i++)
                 Write(i.ToString() + "\n");
             */
-            Backtrack1();
+            bool success = Backtrack1();
 
-            _maze.Print(Write);
-
+            Write("\nPART 3. Results\n\n");
+            if (success)
+            {
+                Write("  3.1. Path is found.\n\n");
+                Write("  3.2. Path graphically\n\n");
+                _maze.Print(Write);
+                Write("\n  3.3. Rules: ");
+                _maze.PrintRules(Write);
+                Write("\n  3.4. Nodes: ");
+                _maze.PrintNodes(Write);
+            }
+            else
+            {
+                Write("Path not found.");
+            }
             _writer.Dispose();
         }
 

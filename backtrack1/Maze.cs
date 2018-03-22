@@ -39,6 +39,8 @@ namespace backtrack1
         };
         private Position _currentPos;
         public int CurrentStep { get; private set; }
+        private Position _initialPos;
+        private int[] _stepArray = null;
         public int MoveCount
         {
             get
@@ -55,7 +57,7 @@ namespace backtrack1
                 for(int j = 0; j<_db.GetLength(1); j++)
                 {
                     if (_db[i, j] == 2)
-                        _currentPos = new Position(j, i);
+                        _initialPos = _currentPos = new Position(j, i);
                 }
             }
             CurrentStep = 2;
@@ -146,6 +148,42 @@ namespace backtrack1
             }
             sb.Append("\n");
             wr(sb.ToString());
+        }
+
+        private void GetStepArray()
+        {
+            if (_stepArray == null)
+            {
+                _stepArray = _appliedMoves.ToArray();
+                Array.Reverse(_stepArray);
+            }
+        }
+
+        public void PrintRules(WriteAction wr)
+        {
+            GetStepArray();
+            bool first = true;
+            for (int i = 0; i < _stepArray.Length; i++)
+            {
+                if (!first)
+                    wr(", ");
+                wr("R{0}", _stepArray[i] + 1);
+                first = false;
+            }
+            wr(".\n");
+        }
+
+        public void PrintNodes(WriteAction wr)
+        {
+            GetStepArray();
+            Position current = _initialPos;
+            wr("[X={0},Y={1}]", current.x + 1, current.y + 1);
+            for (int i = 0; i < _stepArray.Length; i++)
+            {
+                current += _moves[_stepArray[i]];
+                wr(", [X={0},Y={1}]", current.x + 1, current.y + 1);
+            }
+            wr(".\n");
         }
     }
 }
