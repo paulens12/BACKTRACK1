@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "backtrack1": {
+      "commandName": "Project",
+      "commandLineArgs": "maze.txt out.txt"
+    }
+  }
+}
