@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backtrack1", "backtrack1\backtrack1.csproj", "{0B8E915D-6490-4FEA-804D-8D8EB33D3947}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "backtrack1", "backtrack1\backtrack1.csproj", "{0B8E915D-6490-4FEA-804D-8D8EB33D3947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breadth-first", "depth-first\breadth-first.csproj", "{B3424217-18F9-4050-AF46-AB1D74BD12A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0B8E915D-6490-4FEA-804D-8D8EB33D3947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8E915D-6490-4FEA-804D-8D8EB33D3947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8E915D-6490-4FEA-804D-8D8EB33D3947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3424217-18F9-4050-AF46-AB1D74BD12A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3424217-18F9-4050-AF46-AB1D74BD12A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3424217-18F9-4050-AF46-AB1D74BD12A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3424217-18F9-4050-AF46-AB1D74BD12A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
