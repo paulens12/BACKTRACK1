@@ -2,7 +2,7 @@
   "profiles": {
     "backtrack1": {
       "commandName": "Project",
-      "commandLineArgs": "maze.txt out.txt"
+      "commandLineArgs": "maze1.txt out.txt"
     }
   }
 }

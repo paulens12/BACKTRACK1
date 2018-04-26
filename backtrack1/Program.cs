@@ -12,7 +12,7 @@ namespace backtrack1
     {
         private static StreamWriter _writer;
         private static Maze _maze;
-
+        
         public static void Write(string format, params object[] arg)
         {
             #if _DEBUG
@@ -131,7 +131,8 @@ namespace backtrack1
             }
             u = _maze.GetCurrentX();
             v = _maze.GetCurrentY();
-            _maze.UndoMove();
+            if(!_maze.UndoMove())
+                return false;
             sb.Append("       ");
             for (int i = 2; i < mStep; i++)
             {

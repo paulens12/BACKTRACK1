@@ -85,7 +85,7 @@ namespace backtrack1
             x = newPos.x + 1;
             y = newPos.y + 1;
 
-            if ((newPos.x == 0 || newPos.x == _db.GetLength(0) || newPos.y == 0 || newPos.y == _db.GetLength(1)) && _db[newPos.y, newPos.x] == 0)
+            if ((newPos.x == 0 || newPos.x == _db.GetLength(1) - 1 || newPos.y == 0 || newPos.y == _db.GetLength(0) - 1) && _db[newPos.y, newPos.x] == 0)
             {
                 ApplyMove(i, newPos);
                 return MoveStatus.Terminal;
@@ -108,12 +108,15 @@ namespace backtrack1
             _db[newPos.y, newPos.x] = ++CurrentStep;
         }
 
-        public void UndoMove()
+        public bool UndoMove()
         {
             _db[_currentPos.y, _currentPos.x] = -1;
+            if (_appliedMoves.Count == 0)
+                return false;
             _currentPos -= _moves[_appliedMoves.Pop()];
             //_appliedMoves.Pop();
             CurrentStep--;
+            return true;
         }
         
         public void Print(WriteAction wr)
