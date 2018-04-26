@@ -147,7 +147,7 @@ namespace backtrack1
             sb.Append("> X, U\n    ");
             for(int i=0; i<width; i++)
             {
-                sb.Append("    " + (i + 1).ToString());
+                sb.Append(String.Format("{0,5}", i + 1));
             }
             sb.Append("\n");
             wr(sb.ToString());

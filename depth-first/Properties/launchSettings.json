@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "breadth-first": {
+      "commandName": "Project",
+      "commandLineArgs": "maze1.txt out.txt"
+    }
+  }
+}
